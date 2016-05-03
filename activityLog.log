@@ -1,0 +1,1461 @@
+30 dic 2015 11:17:11,342 main - [Base] [/home/marco/IdeaProject/SII-monitoring/plugins] directory does not exist.
+30 dic 2015 11:17:11,345 main - [Base] [/home/marco/IdeaProject/SII-monitoring/plugins] directory does not exist.
+30 dic 2015 11:17:11,345 main - [Base] loaded [], sites []
+30 dic 2015 11:17:11,417 main - using encoder [VanillaChunkDecoder] and decoder[{}] 
+30 dic 2015 11:17:11,442 main - [Base] creating thread_pool [generic], type [cached], keep_alive [30s]
+30 dic 2015 11:17:11,466 main - [Base] creating thread_pool [index], type [fixed], size [2], queue_size [200]
+30 dic 2015 11:17:11,472 main - [Base] creating thread_pool [bulk], type [fixed], size [2], queue_size [50]
+30 dic 2015 11:17:11,472 main - [Base] creating thread_pool [get], type [fixed], size [2], queue_size [1k]
+30 dic 2015 11:17:11,472 main - [Base] creating thread_pool [search], type [fixed], size [4], queue_size [1k]
+30 dic 2015 11:17:11,472 main - [Base] creating thread_pool [suggest], type [fixed], size [2], queue_size [1k]
+30 dic 2015 11:17:11,472 main - [Base] creating thread_pool [percolate], type [fixed], size [2], queue_size [1k]
+30 dic 2015 11:17:11,473 main - [Base] creating thread_pool [management], type [scaling], min [1], size [5], keep_alive [5m]
+30 dic 2015 11:17:11,475 main - [Base] creating thread_pool [listener], type [fixed], size [1], queue_size [null]
+30 dic 2015 11:17:11,475 main - [Base] creating thread_pool [flush], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:17:11,476 main - [Base] creating thread_pool [merge], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:17:11,476 main - [Base] creating thread_pool [refresh], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:17:11,476 main - [Base] creating thread_pool [warmer], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:17:11,476 main - [Base] creating thread_pool [snapshot], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:17:11,476 main - [Base] creating thread_pool [optimize], type [fixed], size [1], queue_size [null]
+30 dic 2015 11:17:11,477 main - [Base] creating thread_pool [fetch_shard_started], type [scaling], min [1], size [4], keep_alive [5m]
+30 dic 2015 11:17:11,478 main - [Base] creating thread_pool [fetch_shard_store], type [scaling], min [1], size [4], keep_alive [5m]
+30 dic 2015 11:17:13,471 main - using gathering [true]
+30 dic 2015 11:17:13,489 main - [Base] node_sampler_interval[5s]
+30 dic 2015 11:17:13,543 main - Using select timeout of 500
+30 dic 2015 11:17:13,543 main - Epoll-bug workaround enabled = false
+30 dic 2015 11:17:13,615 main - [Base] adding address [[#transport#-1][marco-Aspire-3810T][inet[localhost/127.0.0.1:9300]]]
+30 dic 2015 11:17:13,710 elasticsearch[Base][management][T#1] - [Base] connected to node [[#transport#-1][marco-Aspire-3810T][inet[localhost/127.0.0.1:9300]]]
+30 dic 2015 11:17:16,902 main - [Base] failed to connect to discovered node [[Oneg the Prober][sc1fIeRMRTGptrSaoGIV3Q][marco-Aspire-3810T][inet[/192.168.1.6:9300]]]
+org.elasticsearch.transport.ConnectTransportException: [Oneg the Prober][inet[/192.168.1.6:9300]] connect_timeout[30s]
+	at org.elasticsearch.transport.netty.NettyTransport.connectToChannels(NettyTransport.java:825)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:758)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:731)
+	at org.elasticsearch.transport.TransportService.connectToNode(TransportService.java:216)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.validateNewNodes(TransportClientNodesService.java:331)
+	at org.elasticsearch.client.transport.TransportClientNodesService$SniffNodesSampler.doSample(TransportClientNodesService.java:503)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.sample(TransportClientNodesService.java:315)
+	at org.elasticsearch.client.transport.TransportClientNodesService.addTransportAddresses(TransportClientNodesService.java:174)
+	at org.elasticsearch.client.transport.TransportClient.addTransportAddress(TransportClient.java:255)
+	at elasticsearch.ElasticClient.<init>(elasticsearch.ElasticClient.java:13)
+	at elasticsearch.ElasticClient.getInstance(elasticsearch.ElasticClient.java:18)
+	at elasticsearch.ElasticFacade.indexNewsInfo(elasticsearch.ElasticFacade.java:26)
+	at AnalyzePage.Analyzer(AnalyzePage.java:50)
+	at ExtractionNews.GetInfoPage.main(ExtractionNews.GetInfoPage.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
+Caused by: java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:17:16,897 elasticsearch[Base][transport_client_boss][T#1]{New I/O boss #5} - [Base] exception caught on transport layer [[id: 0x0e84ff4a]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:17:19,890 elasticsearch[Base][transport_client_boss][T#1]{New I/O boss #5} - [Base] exception caught on transport layer [[id: 0xd2f4debc]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:17:19,893 elasticsearch[Base][transport_client_boss][T#1]{New I/O boss #5} - [Base] exception caught on transport layer [[id: 0x80d5cde6]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:17:19,892 elasticsearch[Base][generic][T#1] - [Base] failed to connect to discovered node [[Oneg the Prober][sc1fIeRMRTGptrSaoGIV3Q][marco-Aspire-3810T][inet[/192.168.1.6:9300]]]
+org.elasticsearch.transport.ConnectTransportException: [Oneg the Prober][inet[/192.168.1.6:9300]] connect_timeout[30s]
+	at org.elasticsearch.transport.netty.NettyTransport.connectToChannels(NettyTransport.java:825)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:758)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:731)
+	at org.elasticsearch.transport.TransportService.connectToNode(TransportService.java:216)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.validateNewNodes(TransportClientNodesService.java:331)
+	at org.elasticsearch.client.transport.TransportClientNodesService$SniffNodesSampler.doSample(TransportClientNodesService.java:503)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.sample(TransportClientNodesService.java:315)
+	at org.elasticsearch.client.transport.TransportClientNodesService$ScheduledNodeSampler.run(TransportClientNodesService.java:348)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	... 3 more
+30 dic 2015 11:17:27,906 elasticsearch[Base][transport_client_boss][T#1]{New I/O boss #5} - [Base] exception caught on transport layer [[id: 0xc0abc752]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:17:27,908 elasticsearch[Base][transport_client_boss][T#1]{New I/O boss #5} - [Base] exception caught on transport layer [[id: 0x758964b4]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:17:27,909 elasticsearch[Base][transport_client_boss][T#1]{New I/O boss #5} - [Base] exception caught on transport layer [[id: 0xc5811b5b]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:17:27,911 elasticsearch[Base][transport_client_boss][T#1]{New I/O boss #5} - [Base] exception caught on transport layer [[id: 0xd3196ec8]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:17:27,913 elasticsearch[Base][transport_client_boss][T#1]{New I/O boss #5} - [Base] exception caught on transport layer [[id: 0xa75cc2b1]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:17:27,921 elasticsearch[Base][transport_client_boss][T#1]{New I/O boss #5} - [Base] exception caught on transport layer [[id: 0x2cdc09a3]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:17:27,923 elasticsearch[Base][transport_client_boss][T#1]{New I/O boss #5} - [Base] exception caught on transport layer [[id: 0x6a4cfe1b]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:17:27,924 elasticsearch[Base][generic][T#2] - [Base] failed to connect to discovered node [[Oneg the Prober][sc1fIeRMRTGptrSaoGIV3Q][marco-Aspire-3810T][inet[/192.168.1.6:9300]]]
+org.elasticsearch.transport.ConnectTransportException: [Oneg the Prober][inet[/192.168.1.6:9300]] connect_timeout[30s]
+	at org.elasticsearch.transport.netty.NettyTransport.connectToChannels(NettyTransport.java:825)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:758)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:731)
+	at org.elasticsearch.transport.TransportService.connectToNode(TransportService.java:216)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.validateNewNodes(TransportClientNodesService.java:331)
+	at org.elasticsearch.client.transport.TransportClientNodesService$SniffNodesSampler.doSample(TransportClientNodesService.java:503)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.sample(TransportClientNodesService.java:315)
+	at org.elasticsearch.client.transport.TransportClientNodesService$ScheduledNodeSampler.run(TransportClientNodesService.java:348)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	... 3 more
+30 dic 2015 11:17:27,924 elasticsearch[Base][transport_client_boss][T#1]{New I/O boss #5} - [Base] exception caught on transport layer [[id: 0x4677a56d]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:17:35,930 elasticsearch[Base][transport_client_boss][T#1]{New I/O boss #5} - [Base] exception caught on transport layer [[id: 0xf20cdcec]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:17:35,931 elasticsearch[Base][generic][T#2] - [Base] failed to connect to discovered node [[Oneg the Prober][sc1fIeRMRTGptrSaoGIV3Q][marco-Aspire-3810T][inet[/192.168.1.6:9300]]]
+org.elasticsearch.transport.ConnectTransportException: [Oneg the Prober][inet[/192.168.1.6:9300]] connect_timeout[30s]
+	at org.elasticsearch.transport.netty.NettyTransport.connectToChannels(NettyTransport.java:825)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:758)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:731)
+	at org.elasticsearch.transport.TransportService.connectToNode(TransportService.java:216)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.validateNewNodes(TransportClientNodesService.java:331)
+	at org.elasticsearch.client.transport.TransportClientNodesService$SniffNodesSampler.doSample(TransportClientNodesService.java:503)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.sample(TransportClientNodesService.java:315)
+	at org.elasticsearch.client.transport.TransportClientNodesService$ScheduledNodeSampler.run(TransportClientNodesService.java:348)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	... 3 more
+30 dic 2015 11:17:43,939 elasticsearch[Base][generic][T#2] - [Base] failed to connect to discovered node [[Oneg the Prober][sc1fIeRMRTGptrSaoGIV3Q][marco-Aspire-3810T][inet[/192.168.1.6:9300]]]
+org.elasticsearch.transport.ConnectTransportException: [Oneg the Prober][inet[/192.168.1.6:9300]] connect_timeout[30s]
+	at org.elasticsearch.transport.netty.NettyTransport.connectToChannels(NettyTransport.java:825)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:758)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:731)
+	at org.elasticsearch.transport.TransportService.connectToNode(TransportService.java:216)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.validateNewNodes(TransportClientNodesService.java:331)
+	at org.elasticsearch.client.transport.TransportClientNodesService$SniffNodesSampler.doSample(TransportClientNodesService.java:503)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.sample(TransportClientNodesService.java:315)
+	at org.elasticsearch.client.transport.TransportClientNodesService$ScheduledNodeSampler.run(TransportClientNodesService.java:348)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	... 3 more
+30 dic 2015 11:17:43,941 elasticsearch[Base][transport_client_boss][T#1]{New I/O boss #5} - [Base] exception caught on transport layer [[id: 0x7ad0fd8d]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:24:35,972 main - [Marvel Boy] [/home/marco/IdeaProject/SII-monitoring/plugins] directory does not exist.
+30 dic 2015 11:24:35,975 main - [Marvel Boy] [/home/marco/IdeaProject/SII-monitoring/plugins] directory does not exist.
+30 dic 2015 11:24:35,975 main - [Marvel Boy] loaded [], sites []
+30 dic 2015 11:24:36,048 main - using encoder [VanillaChunkDecoder] and decoder[{}] 
+30 dic 2015 11:24:36,069 main - [Marvel Boy] creating thread_pool [generic], type [cached], keep_alive [30s]
+30 dic 2015 11:24:36,150 main - [Marvel Boy] creating thread_pool [index], type [fixed], size [2], queue_size [200]
+30 dic 2015 11:24:36,158 main - [Marvel Boy] creating thread_pool [bulk], type [fixed], size [2], queue_size [50]
+30 dic 2015 11:24:36,159 main - [Marvel Boy] creating thread_pool [get], type [fixed], size [2], queue_size [1k]
+30 dic 2015 11:24:36,159 main - [Marvel Boy] creating thread_pool [search], type [fixed], size [4], queue_size [1k]
+30 dic 2015 11:24:36,159 main - [Marvel Boy] creating thread_pool [suggest], type [fixed], size [2], queue_size [1k]
+30 dic 2015 11:24:36,159 main - [Marvel Boy] creating thread_pool [percolate], type [fixed], size [2], queue_size [1k]
+30 dic 2015 11:24:36,159 main - [Marvel Boy] creating thread_pool [management], type [scaling], min [1], size [5], keep_alive [5m]
+30 dic 2015 11:24:36,161 main - [Marvel Boy] creating thread_pool [listener], type [fixed], size [1], queue_size [null]
+30 dic 2015 11:24:36,162 main - [Marvel Boy] creating thread_pool [flush], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:24:36,162 main - [Marvel Boy] creating thread_pool [merge], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:24:36,162 main - [Marvel Boy] creating thread_pool [refresh], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:24:36,162 main - [Marvel Boy] creating thread_pool [warmer], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:24:36,162 main - [Marvel Boy] creating thread_pool [snapshot], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:24:36,162 main - [Marvel Boy] creating thread_pool [optimize], type [fixed], size [1], queue_size [null]
+30 dic 2015 11:24:36,163 main - [Marvel Boy] creating thread_pool [fetch_shard_started], type [scaling], min [1], size [4], keep_alive [5m]
+30 dic 2015 11:24:36,163 main - [Marvel Boy] creating thread_pool [fetch_shard_store], type [scaling], min [1], size [4], keep_alive [5m]
+30 dic 2015 11:24:38,060 main - using gathering [true]
+30 dic 2015 11:24:38,078 main - [Marvel Boy] node_sampler_interval[5s]
+30 dic 2015 11:24:38,144 main - Using select timeout of 500
+30 dic 2015 11:24:38,144 main - Epoll-bug workaround enabled = false
+30 dic 2015 11:24:38,216 main - [Marvel Boy] adding address [[#transport#-1][marco-Aspire-3810T][inet[localhost/127.0.0.1:9300]]]
+30 dic 2015 11:24:38,320 elasticsearch[Marvel Boy][management][T#1] - [Marvel Boy] connected to node [[#transport#-1][marco-Aspire-3810T][inet[localhost/127.0.0.1:9300]]]
+30 dic 2015 11:24:41,526 main - [Marvel Boy] failed to connect to discovered node [[Oneg the Prober][sc1fIeRMRTGptrSaoGIV3Q][marco-Aspire-3810T][inet[/192.168.1.6:9300]]]
+org.elasticsearch.transport.ConnectTransportException: [Oneg the Prober][inet[/192.168.1.6:9300]] connect_timeout[30s]
+	at org.elasticsearch.transport.netty.NettyTransport.connectToChannels(NettyTransport.java:825)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:758)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:731)
+	at org.elasticsearch.transport.TransportService.connectToNode(TransportService.java:216)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.validateNewNodes(TransportClientNodesService.java:331)
+	at org.elasticsearch.client.transport.TransportClientNodesService$SniffNodesSampler.doSample(TransportClientNodesService.java:503)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.sample(TransportClientNodesService.java:315)
+	at org.elasticsearch.client.transport.TransportClientNodesService.addTransportAddresses(TransportClientNodesService.java:174)
+	at org.elasticsearch.client.transport.TransportClient.addTransportAddress(TransportClient.java:255)
+	at elasticsearch.ElasticClient.<init>(elasticsearch.ElasticClient.java:13)
+	at elasticsearch.ElasticClient.getInstance(elasticsearch.ElasticClient.java:18)
+	at elasticsearch.ElasticFacade.indexNewsInfo(elasticsearch.ElasticFacade.java:27)
+	at AnalyzePage.Analyzer(AnalyzePage.java:51)
+	at ExtractionNews.GetInfoPage.main(ExtractionNews.GetInfoPage.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
+Caused by: java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:24:41,521 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0x14456550]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:24:44,514 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0x9c4ac478]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:24:44,520 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0xa49ae54a]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:24:44,522 elasticsearch[Marvel Boy][generic][T#1] - [Marvel Boy] failed to connect to discovered node [[Oneg the Prober][sc1fIeRMRTGptrSaoGIV3Q][marco-Aspire-3810T][inet[/192.168.1.6:9300]]]
+org.elasticsearch.transport.ConnectTransportException: [Oneg the Prober][inet[/192.168.1.6:9300]] connect_timeout[30s]
+	at org.elasticsearch.transport.netty.NettyTransport.connectToChannels(NettyTransport.java:825)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:758)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:731)
+	at org.elasticsearch.transport.TransportService.connectToNode(TransportService.java:216)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.validateNewNodes(TransportClientNodesService.java:331)
+	at org.elasticsearch.client.transport.TransportClientNodesService$SniffNodesSampler.doSample(TransportClientNodesService.java:503)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.sample(TransportClientNodesService.java:315)
+	at org.elasticsearch.client.transport.TransportClientNodesService$ScheduledNodeSampler.run(TransportClientNodesService.java:348)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	... 3 more
+30 dic 2015 11:24:44,529 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0xa8d02856]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:24:52,539 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0xc2518a44]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:24:52,541 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0x9d6136cb]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:24:52,544 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0x9744f044]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:24:52,546 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0xa417e3d8]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:24:52,547 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0xe9aea31d]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:24:52,550 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0x4a8ab008]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:24:52,551 elasticsearch[Marvel Boy][generic][T#1] - [Marvel Boy] failed to connect to discovered node [[Oneg the Prober][sc1fIeRMRTGptrSaoGIV3Q][marco-Aspire-3810T][inet[/192.168.1.6:9300]]]
+org.elasticsearch.transport.ConnectTransportException: [Oneg the Prober][inet[/192.168.1.6:9300]] connect_timeout[30s]
+	at org.elasticsearch.transport.netty.NettyTransport.connectToChannels(NettyTransport.java:825)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:758)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:731)
+	at org.elasticsearch.transport.TransportService.connectToNode(TransportService.java:216)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.validateNewNodes(TransportClientNodesService.java:331)
+	at org.elasticsearch.client.transport.TransportClientNodesService$SniffNodesSampler.doSample(TransportClientNodesService.java:503)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.sample(TransportClientNodesService.java:315)
+	at org.elasticsearch.client.transport.TransportClientNodesService$ScheduledNodeSampler.run(TransportClientNodesService.java:348)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	... 3 more
+30 dic 2015 11:24:52,553 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0xb30c3d55]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:25:00,559 elasticsearch[Marvel Boy][generic][T#1] - [Marvel Boy] failed to connect to discovered node [[Oneg the Prober][sc1fIeRMRTGptrSaoGIV3Q][marco-Aspire-3810T][inet[/192.168.1.6:9300]]]
+org.elasticsearch.transport.ConnectTransportException: [Oneg the Prober][inet[/192.168.1.6:9300]] connect_timeout[30s]
+	at org.elasticsearch.transport.netty.NettyTransport.connectToChannels(NettyTransport.java:825)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:758)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:731)
+	at org.elasticsearch.transport.TransportService.connectToNode(TransportService.java:216)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.validateNewNodes(TransportClientNodesService.java:331)
+	at org.elasticsearch.client.transport.TransportClientNodesService$SniffNodesSampler.doSample(TransportClientNodesService.java:503)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.sample(TransportClientNodesService.java:315)
+	at org.elasticsearch.client.transport.TransportClientNodesService$ScheduledNodeSampler.run(TransportClientNodesService.java:348)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	... 3 more
+30 dic 2015 11:25:00,560 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0xd4280d77]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:25:08,567 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0xcd7b92e6]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:25:08,567 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0x02c3cec4]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:25:08,573 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0x1c4fc114]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:25:08,574 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0x103d9bde]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:25:08,576 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0xe6bfdb5c]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:25:08,577 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0x1bbd2f45]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:25:08,577 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0x0ac12c66]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:25:08,579 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0x7ecd1684]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:25:08,584 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0x917e57c4]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:25:08,587 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0x6ce2c266]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:25:08,588 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0x316cc12d]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:25:08,595 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0x2aeefc08]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:25:08,597 elasticsearch[Marvel Boy][generic][T#1] - [Marvel Boy] failed to connect to discovered node [[Oneg the Prober][sc1fIeRMRTGptrSaoGIV3Q][marco-Aspire-3810T][inet[/192.168.1.6:9300]]]
+org.elasticsearch.transport.ConnectTransportException: [Oneg the Prober][inet[/192.168.1.6:9300]] connect_timeout[30s]
+	at org.elasticsearch.transport.netty.NettyTransport.connectToChannels(NettyTransport.java:825)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:758)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:731)
+	at org.elasticsearch.transport.TransportService.connectToNode(TransportService.java:216)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.validateNewNodes(TransportClientNodesService.java:331)
+	at org.elasticsearch.client.transport.TransportClientNodesService$SniffNodesSampler.doSample(TransportClientNodesService.java:503)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.sample(TransportClientNodesService.java:315)
+	at org.elasticsearch.client.transport.TransportClientNodesService$ScheduledNodeSampler.run(TransportClientNodesService.java:348)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	... 3 more
+30 dic 2015 11:25:16,602 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0x7e3e138d]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:25:16,604 elasticsearch[Marvel Boy][generic][T#1] - [Marvel Boy] failed to connect to discovered node [[Oneg the Prober][sc1fIeRMRTGptrSaoGIV3Q][marco-Aspire-3810T][inet[/192.168.1.6:9300]]]
+org.elasticsearch.transport.ConnectTransportException: [Oneg the Prober][inet[/192.168.1.6:9300]] connect_timeout[30s]
+	at org.elasticsearch.transport.netty.NettyTransport.connectToChannels(NettyTransport.java:825)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:758)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:731)
+	at org.elasticsearch.transport.TransportService.connectToNode(TransportService.java:216)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.validateNewNodes(TransportClientNodesService.java:331)
+	at org.elasticsearch.client.transport.TransportClientNodesService$SniffNodesSampler.doSample(TransportClientNodesService.java:503)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.sample(TransportClientNodesService.java:315)
+	at org.elasticsearch.client.transport.TransportClientNodesService$ScheduledNodeSampler.run(TransportClientNodesService.java:348)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	... 3 more
+30 dic 2015 11:25:16,607 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0x8b6b336e]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:25:24,619 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0x292ef0a4]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:25:24,621 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0x52c8c8ed]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:25:24,624 elasticsearch[Marvel Boy][transport_client_boss][T#1]{New I/O boss #5} - [Marvel Boy] exception caught on transport layer [[id: 0xb003efca]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:25:24,624 elasticsearch[Marvel Boy][generic][T#1] - [Marvel Boy] failed to connect to discovered node [[Oneg the Prober][sc1fIeRMRTGptrSaoGIV3Q][marco-Aspire-3810T][inet[/192.168.1.6:9300]]]
+org.elasticsearch.transport.ConnectTransportException: [Oneg the Prober][inet[/192.168.1.6:9300]] connect_timeout[30s]
+	at org.elasticsearch.transport.netty.NettyTransport.connectToChannels(NettyTransport.java:825)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:758)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:731)
+	at org.elasticsearch.transport.TransportService.connectToNode(TransportService.java:216)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.validateNewNodes(TransportClientNodesService.java:331)
+	at org.elasticsearch.client.transport.TransportClientNodesService$SniffNodesSampler.doSample(TransportClientNodesService.java:503)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.sample(TransportClientNodesService.java:315)
+	at org.elasticsearch.client.transport.TransportClientNodesService$ScheduledNodeSampler.run(TransportClientNodesService.java:348)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	... 3 more
+30 dic 2015 11:27:18,591 main - [Sara Grey] [/home/marco/IdeaProject/SII-monitoring/plugins] directory does not exist.
+30 dic 2015 11:27:18,623 main - [Sara Grey] [/home/marco/IdeaProject/SII-monitoring/plugins] directory does not exist.
+30 dic 2015 11:27:18,623 main - [Sara Grey] loaded [], sites []
+30 dic 2015 11:27:18,710 main - using encoder [VanillaChunkDecoder] and decoder[{}] 
+30 dic 2015 11:27:18,735 main - [Sara Grey] creating thread_pool [generic], type [cached], keep_alive [30s]
+30 dic 2015 11:27:18,758 main - [Sara Grey] creating thread_pool [index], type [fixed], size [2], queue_size [200]
+30 dic 2015 11:27:18,764 main - [Sara Grey] creating thread_pool [bulk], type [fixed], size [2], queue_size [50]
+30 dic 2015 11:27:18,764 main - [Sara Grey] creating thread_pool [get], type [fixed], size [2], queue_size [1k]
+30 dic 2015 11:27:18,764 main - [Sara Grey] creating thread_pool [search], type [fixed], size [4], queue_size [1k]
+30 dic 2015 11:27:18,765 main - [Sara Grey] creating thread_pool [suggest], type [fixed], size [2], queue_size [1k]
+30 dic 2015 11:27:18,765 main - [Sara Grey] creating thread_pool [percolate], type [fixed], size [2], queue_size [1k]
+30 dic 2015 11:27:18,765 main - [Sara Grey] creating thread_pool [management], type [scaling], min [1], size [5], keep_alive [5m]
+30 dic 2015 11:27:18,768 main - [Sara Grey] creating thread_pool [listener], type [fixed], size [1], queue_size [null]
+30 dic 2015 11:27:18,768 main - [Sara Grey] creating thread_pool [flush], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:27:18,768 main - [Sara Grey] creating thread_pool [merge], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:27:18,768 main - [Sara Grey] creating thread_pool [refresh], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:27:18,768 main - [Sara Grey] creating thread_pool [warmer], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:27:18,768 main - [Sara Grey] creating thread_pool [snapshot], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:27:18,768 main - [Sara Grey] creating thread_pool [optimize], type [fixed], size [1], queue_size [null]
+30 dic 2015 11:27:18,769 main - [Sara Grey] creating thread_pool [fetch_shard_started], type [scaling], min [1], size [4], keep_alive [5m]
+30 dic 2015 11:27:18,769 main - [Sara Grey] creating thread_pool [fetch_shard_store], type [scaling], min [1], size [4], keep_alive [5m]
+30 dic 2015 11:27:20,919 main - using gathering [true]
+30 dic 2015 11:27:20,937 main - [Sara Grey] node_sampler_interval[5s]
+30 dic 2015 11:27:21,002 main - Using select timeout of 500
+30 dic 2015 11:27:21,002 main - Epoll-bug workaround enabled = false
+30 dic 2015 11:27:21,076 main - [Sara Grey] adding address [[#transport#-1][marco-Aspire-3810T][inet[localhost/127.0.0.1:9300]]]
+30 dic 2015 11:29:32,282 main - [Black Tarantula] [/home/marco/IdeaProject/SII-monitoring/plugins] directory does not exist.
+30 dic 2015 11:29:32,285 main - [Black Tarantula] [/home/marco/IdeaProject/SII-monitoring/plugins] directory does not exist.
+30 dic 2015 11:29:32,285 main - [Black Tarantula] loaded [], sites []
+30 dic 2015 11:29:32,360 main - using encoder [VanillaChunkDecoder] and decoder[{}] 
+30 dic 2015 11:29:32,384 main - [Black Tarantula] creating thread_pool [generic], type [cached], keep_alive [30s]
+30 dic 2015 11:29:32,412 main - [Black Tarantula] creating thread_pool [index], type [fixed], size [2], queue_size [200]
+30 dic 2015 11:29:32,418 main - [Black Tarantula] creating thread_pool [bulk], type [fixed], size [2], queue_size [50]
+30 dic 2015 11:29:32,418 main - [Black Tarantula] creating thread_pool [get], type [fixed], size [2], queue_size [1k]
+30 dic 2015 11:29:32,419 main - [Black Tarantula] creating thread_pool [search], type [fixed], size [4], queue_size [1k]
+30 dic 2015 11:29:32,419 main - [Black Tarantula] creating thread_pool [suggest], type [fixed], size [2], queue_size [1k]
+30 dic 2015 11:29:32,419 main - [Black Tarantula] creating thread_pool [percolate], type [fixed], size [2], queue_size [1k]
+30 dic 2015 11:29:32,420 main - [Black Tarantula] creating thread_pool [management], type [scaling], min [1], size [5], keep_alive [5m]
+30 dic 2015 11:29:32,423 main - [Black Tarantula] creating thread_pool [listener], type [fixed], size [1], queue_size [null]
+30 dic 2015 11:29:32,423 main - [Black Tarantula] creating thread_pool [flush], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:29:32,423 main - [Black Tarantula] creating thread_pool [merge], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:29:32,423 main - [Black Tarantula] creating thread_pool [refresh], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:29:32,423 main - [Black Tarantula] creating thread_pool [warmer], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:29:32,423 main - [Black Tarantula] creating thread_pool [snapshot], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:29:32,424 main - [Black Tarantula] creating thread_pool [optimize], type [fixed], size [1], queue_size [null]
+30 dic 2015 11:29:32,424 main - [Black Tarantula] creating thread_pool [fetch_shard_started], type [scaling], min [1], size [4], keep_alive [5m]
+30 dic 2015 11:29:32,426 main - [Black Tarantula] creating thread_pool [fetch_shard_store], type [scaling], min [1], size [4], keep_alive [5m]
+30 dic 2015 11:29:34,443 main - using gathering [true]
+30 dic 2015 11:29:34,460 main - [Black Tarantula] node_sampler_interval[5s]
+30 dic 2015 11:29:34,538 main - Using select timeout of 500
+30 dic 2015 11:29:34,538 main - Epoll-bug workaround enabled = false
+30 dic 2015 11:29:34,618 main - [Black Tarantula] adding address [[#transport#-1][marco-Aspire-3810T][inet[localhost/127.0.0.1:9300]]]
+30 dic 2015 11:29:34,712 elasticsearch[Black Tarantula][management][T#1] - [Black Tarantula] connected to node [[#transport#-1][marco-Aspire-3810T][inet[localhost/127.0.0.1:9300]]]
+30 dic 2015 11:29:38,456 elasticsearch[Black Tarantula][transport_client_boss][T#1]{New I/O boss #5} - [Black Tarantula] exception caught on transport layer [[id: 0x0420db31]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:29:38,466 main - [Black Tarantula] failed to connect to discovered node [[Oneg the Prober][sc1fIeRMRTGptrSaoGIV3Q][marco-Aspire-3810T][inet[/192.168.1.6:9300]]]
+org.elasticsearch.transport.ConnectTransportException: [Oneg the Prober][inet[/192.168.1.6:9300]] connect_timeout[30s]
+	at org.elasticsearch.transport.netty.NettyTransport.connectToChannels(NettyTransport.java:825)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:758)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:731)
+	at org.elasticsearch.transport.TransportService.connectToNode(TransportService.java:216)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.validateNewNodes(TransportClientNodesService.java:331)
+	at org.elasticsearch.client.transport.TransportClientNodesService$SniffNodesSampler.doSample(TransportClientNodesService.java:503)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.sample(TransportClientNodesService.java:315)
+	at org.elasticsearch.client.transport.TransportClientNodesService.addTransportAddresses(TransportClientNodesService.java:174)
+	at org.elasticsearch.client.transport.TransportClient.addTransportAddress(TransportClient.java:255)
+	at elasticsearch.ElasticClient.<init>(elasticsearch.ElasticClient.java:13)
+	at elasticsearch.ElasticClient.getInstance(elasticsearch.ElasticClient.java:18)
+	at elasticsearch.ElasticFacade.indexNewsInfo(elasticsearch.ElasticFacade.java:27)
+	at AnalyzePage.Analyzer(AnalyzePage.java:54)
+	at ExtractionNews.GetInfoPage.main(ExtractionNews.GetInfoPage.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
+Caused by: java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:29:38,477 elasticsearch[Black Tarantula][transport_client_boss][T#1]{New I/O boss #5} - [Black Tarantula] exception caught on transport layer [[id: 0x10b3e56d]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:29:41,447 elasticsearch[Black Tarantula][transport_client_boss][T#1]{New I/O boss #5} - [Black Tarantula] exception caught on transport layer [[id: 0xab5be4e6]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:29:41,447 elasticsearch[Black Tarantula][generic][T#1] - [Black Tarantula] failed to connect to discovered node [[Oneg the Prober][sc1fIeRMRTGptrSaoGIV3Q][marco-Aspire-3810T][inet[/192.168.1.6:9300]]]
+org.elasticsearch.transport.ConnectTransportException: [Oneg the Prober][inet[/192.168.1.6:9300]] connect_timeout[30s]
+	at org.elasticsearch.transport.netty.NettyTransport.connectToChannels(NettyTransport.java:825)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:758)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:731)
+	at org.elasticsearch.transport.TransportService.connectToNode(TransportService.java:216)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.validateNewNodes(TransportClientNodesService.java:331)
+	at org.elasticsearch.client.transport.TransportClientNodesService$SniffNodesSampler.doSample(TransportClientNodesService.java:503)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.sample(TransportClientNodesService.java:315)
+	at org.elasticsearch.client.transport.TransportClientNodesService$ScheduledNodeSampler.run(TransportClientNodesService.java:348)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	... 3 more
+30 dic 2015 11:35:14,286 main - [Alex Wilder] [/home/marco/IdeaProject/SII-monitoring/plugins] directory does not exist.
+30 dic 2015 11:35:14,289 main - [Alex Wilder] [/home/marco/IdeaProject/SII-monitoring/plugins] directory does not exist.
+30 dic 2015 11:35:14,289 main - [Alex Wilder] loaded [], sites []
+30 dic 2015 11:35:14,399 main - using encoder [VanillaChunkDecoder] and decoder[{}] 
+30 dic 2015 11:35:14,433 main - [Alex Wilder] creating thread_pool [generic], type [cached], keep_alive [30s]
+30 dic 2015 11:35:14,459 main - [Alex Wilder] creating thread_pool [index], type [fixed], size [2], queue_size [200]
+30 dic 2015 11:35:14,465 main - [Alex Wilder] creating thread_pool [bulk], type [fixed], size [2], queue_size [50]
+30 dic 2015 11:35:14,465 main - [Alex Wilder] creating thread_pool [get], type [fixed], size [2], queue_size [1k]
+30 dic 2015 11:35:14,466 main - [Alex Wilder] creating thread_pool [search], type [fixed], size [4], queue_size [1k]
+30 dic 2015 11:35:14,466 main - [Alex Wilder] creating thread_pool [suggest], type [fixed], size [2], queue_size [1k]
+30 dic 2015 11:35:14,466 main - [Alex Wilder] creating thread_pool [percolate], type [fixed], size [2], queue_size [1k]
+30 dic 2015 11:35:14,467 main - [Alex Wilder] creating thread_pool [management], type [scaling], min [1], size [5], keep_alive [5m]
+30 dic 2015 11:35:14,469 main - [Alex Wilder] creating thread_pool [listener], type [fixed], size [1], queue_size [null]
+30 dic 2015 11:35:14,469 main - [Alex Wilder] creating thread_pool [flush], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:35:14,469 main - [Alex Wilder] creating thread_pool [merge], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:35:14,469 main - [Alex Wilder] creating thread_pool [refresh], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:35:14,470 main - [Alex Wilder] creating thread_pool [warmer], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:35:14,470 main - [Alex Wilder] creating thread_pool [snapshot], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:35:14,470 main - [Alex Wilder] creating thread_pool [optimize], type [fixed], size [1], queue_size [null]
+30 dic 2015 11:35:14,470 main - [Alex Wilder] creating thread_pool [fetch_shard_started], type [scaling], min [1], size [4], keep_alive [5m]
+30 dic 2015 11:35:14,471 main - [Alex Wilder] creating thread_pool [fetch_shard_store], type [scaling], min [1], size [4], keep_alive [5m]
+30 dic 2015 11:35:16,493 main - using gathering [true]
+30 dic 2015 11:35:16,516 main - [Alex Wilder] node_sampler_interval[5s]
+30 dic 2015 11:35:16,592 main - Using select timeout of 500
+30 dic 2015 11:35:16,592 main - Epoll-bug workaround enabled = false
+30 dic 2015 11:35:16,665 main - [Alex Wilder] adding address [[#transport#-1][marco-Aspire-3810T][inet[localhost/127.0.0.1:9300]]]
+30 dic 2015 11:35:16,762 elasticsearch[Alex Wilder][management][T#1] - [Alex Wilder] connected to node [[#transport#-1][marco-Aspire-3810T][inet[localhost/127.0.0.1:9300]]]
+30 dic 2015 11:35:19,977 elasticsearch[Alex Wilder][transport_client_boss][T#1]{New I/O boss #5} - [Alex Wilder] exception caught on transport layer [[id: 0x91efef37]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:35:19,988 elasticsearch[Alex Wilder][transport_client_boss][T#1]{New I/O boss #5} - [Alex Wilder] exception caught on transport layer [[id: 0x386fdc87]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:35:19,990 elasticsearch[Alex Wilder][transport_client_boss][T#1]{New I/O boss #5} - [Alex Wilder] exception caught on transport layer [[id: 0xa46c390f]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:35:19,991 elasticsearch[Alex Wilder][transport_client_boss][T#1]{New I/O boss #5} - [Alex Wilder] exception caught on transport layer [[id: 0x0590b580]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:35:20,003 elasticsearch[Alex Wilder][transport_client_boss][T#1]{New I/O boss #5} - [Alex Wilder] exception caught on transport layer [[id: 0x3371e0e5]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:35:20,010 elasticsearch[Alex Wilder][transport_client_boss][T#1]{New I/O boss #5} - [Alex Wilder] exception caught on transport layer [[id: 0x01231493]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:35:20,012 elasticsearch[Alex Wilder][transport_client_boss][T#1]{New I/O boss #5} - [Alex Wilder] exception caught on transport layer [[id: 0xddf09ece]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:35:20,015 main - [Alex Wilder] failed to connect to discovered node [[Oneg the Prober][sc1fIeRMRTGptrSaoGIV3Q][marco-Aspire-3810T][inet[/192.168.1.6:9300]]]
+org.elasticsearch.transport.ConnectTransportException: [Oneg the Prober][inet[/192.168.1.6:9300]] connect_timeout[30s]
+	at org.elasticsearch.transport.netty.NettyTransport.connectToChannels(NettyTransport.java:825)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:758)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:731)
+	at org.elasticsearch.transport.TransportService.connectToNode(TransportService.java:216)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.validateNewNodes(TransportClientNodesService.java:331)
+	at org.elasticsearch.client.transport.TransportClientNodesService$SniffNodesSampler.doSample(TransportClientNodesService.java:503)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.sample(TransportClientNodesService.java:315)
+	at org.elasticsearch.client.transport.TransportClientNodesService.addTransportAddresses(TransportClientNodesService.java:174)
+	at org.elasticsearch.client.transport.TransportClient.addTransportAddress(TransportClient.java:255)
+	at elasticsearch.ElasticClient.<init>(elasticsearch.ElasticClient.java:13)
+	at elasticsearch.ElasticClient.getInstance(elasticsearch.ElasticClient.java:18)
+	at elasticsearch.ElasticFacade.indexNewsInfo(elasticsearch.ElasticFacade.java:26)
+	at AnalyzePage.Analyzer(AnalyzePage.java:54)
+	at ExtractionNews.GetInfoPage.main(ExtractionNews.GetInfoPage.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
+Caused by: java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:35:20,026 elasticsearch[Alex Wilder][transport_client_boss][T#1]{New I/O boss #5} - [Alex Wilder] exception caught on transport layer [[id: 0x078ff5e4]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:35:22,978 elasticsearch[Alex Wilder][transport_client_boss][T#1]{New I/O boss #5} - [Alex Wilder] exception caught on transport layer [[id: 0x424b3314]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:35:22,982 elasticsearch[Alex Wilder][transport_client_boss][T#1]{New I/O boss #5} - [Alex Wilder] exception caught on transport layer [[id: 0x0323fc1d]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:35:23,000 elasticsearch[Alex Wilder][transport_client_boss][T#1]{New I/O boss #5} - [Alex Wilder] exception caught on transport layer [[id: 0x9269de89]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:35:23,005 elasticsearch[Alex Wilder][transport_client_boss][T#1]{New I/O boss #5} - [Alex Wilder] exception caught on transport layer [[id: 0x1153df0a]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:35:23,007 elasticsearch[Alex Wilder][transport_client_boss][T#1]{New I/O boss #5} - [Alex Wilder] exception caught on transport layer [[id: 0xb874db96]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:35:23,009 elasticsearch[Alex Wilder][transport_client_boss][T#1]{New I/O boss #5} - [Alex Wilder] exception caught on transport layer [[id: 0xa4347da8]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:35:23,011 elasticsearch[Alex Wilder][transport_client_boss][T#1]{New I/O boss #5} - [Alex Wilder] exception caught on transport layer [[id: 0x06163a43]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:35:23,014 elasticsearch[Alex Wilder][transport_client_boss][T#1]{New I/O boss #5} - [Alex Wilder] exception caught on transport layer [[id: 0x1ac111fb]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:35:23,020 elasticsearch[Alex Wilder][generic][T#1] - [Alex Wilder] failed to connect to discovered node [[Oneg the Prober][sc1fIeRMRTGptrSaoGIV3Q][marco-Aspire-3810T][inet[/192.168.1.6:9300]]]
+org.elasticsearch.transport.ConnectTransportException: [Oneg the Prober][inet[/192.168.1.6:9300]] connect_timeout[30s]
+	at org.elasticsearch.transport.netty.NettyTransport.connectToChannels(NettyTransport.java:825)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:758)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:731)
+	at org.elasticsearch.transport.TransportService.connectToNode(TransportService.java:216)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.validateNewNodes(TransportClientNodesService.java:331)
+	at org.elasticsearch.client.transport.TransportClientNodesService$SniffNodesSampler.doSample(TransportClientNodesService.java:503)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.sample(TransportClientNodesService.java:315)
+	at org.elasticsearch.client.transport.TransportClientNodesService$ScheduledNodeSampler.run(TransportClientNodesService.java:348)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	... 3 more
+30 dic 2015 11:35:23,021 elasticsearch[Alex Wilder][transport_client_boss][T#1]{New I/O boss #5} - [Alex Wilder] exception caught on transport layer [[id: 0xf038073b]], closing connection
+java.net.NoRouteToHostException: Nessun instradamento per l'host
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:152)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:105)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:79)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:47:50,632 main - [the Living Colossus It] [/home/marco/IdeaProject/SII-monitoring/plugins] directory does not exist.
+30 dic 2015 11:47:50,634 main - [the Living Colossus It] [/home/marco/IdeaProject/SII-monitoring/plugins] directory does not exist.
+30 dic 2015 11:47:50,634 main - [the Living Colossus It] loaded [], sites []
+30 dic 2015 11:47:50,814 main - using encoder [VanillaChunkDecoder] and decoder[{}] 
+30 dic 2015 11:47:50,843 main - [the Living Colossus It] creating thread_pool [generic], type [cached], keep_alive [30s]
+30 dic 2015 11:47:50,889 main - [the Living Colossus It] creating thread_pool [index], type [fixed], size [2], queue_size [200]
+30 dic 2015 11:47:50,935 main - [the Living Colossus It] creating thread_pool [bulk], type [fixed], size [2], queue_size [50]
+30 dic 2015 11:47:50,936 main - [the Living Colossus It] creating thread_pool [get], type [fixed], size [2], queue_size [1k]
+30 dic 2015 11:47:50,936 main - [the Living Colossus It] creating thread_pool [search], type [fixed], size [4], queue_size [1k]
+30 dic 2015 11:47:50,936 main - [the Living Colossus It] creating thread_pool [suggest], type [fixed], size [2], queue_size [1k]
+30 dic 2015 11:47:50,936 main - [the Living Colossus It] creating thread_pool [percolate], type [fixed], size [2], queue_size [1k]
+30 dic 2015 11:47:50,936 main - [the Living Colossus It] creating thread_pool [management], type [scaling], min [1], size [5], keep_alive [5m]
+30 dic 2015 11:47:50,939 main - [the Living Colossus It] creating thread_pool [listener], type [fixed], size [1], queue_size [null]
+30 dic 2015 11:47:50,939 main - [the Living Colossus It] creating thread_pool [flush], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:47:50,939 main - [the Living Colossus It] creating thread_pool [merge], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:47:50,939 main - [the Living Colossus It] creating thread_pool [refresh], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:47:50,939 main - [the Living Colossus It] creating thread_pool [warmer], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:47:50,939 main - [the Living Colossus It] creating thread_pool [snapshot], type [scaling], min [1], size [1], keep_alive [5m]
+30 dic 2015 11:47:50,939 main - [the Living Colossus It] creating thread_pool [optimize], type [fixed], size [1], queue_size [null]
+30 dic 2015 11:47:50,940 main - [the Living Colossus It] creating thread_pool [fetch_shard_started], type [scaling], min [1], size [4], keep_alive [5m]
+30 dic 2015 11:47:50,940 main - [the Living Colossus It] creating thread_pool [fetch_shard_store], type [scaling], min [1], size [4], keep_alive [5m]
+30 dic 2015 11:47:53,220 main - using gathering [true]
+30 dic 2015 11:47:53,236 main - [the Living Colossus It] node_sampler_interval[5s]
+30 dic 2015 11:47:53,296 main - Using select timeout of 500
+30 dic 2015 11:47:53,296 main - Epoll-bug workaround enabled = false
+30 dic 2015 11:47:53,362 main - [the Living Colossus It] adding address [[#transport#-1][marco-Aspire-3810T][inet[localhost/127.0.0.1:9200]]]
+30 dic 2015 11:47:53,460 elasticsearch[the Living Colossus It][management][T#1] - [the Living Colossus It] connected to node [[#transport#-1][marco-Aspire-3810T][inet[localhost/127.0.0.1:9200]]]
+30 dic 2015 11:47:58,488 elasticsearch[the Living Colossus It][generic][T#2] - [the Living Colossus It] failed to get local cluster state for [#transport#-1][marco-Aspire-3810T][inet[localhost/127.0.0.1:9200]], disconnecting...
+org.elasticsearch.transport.ReceiveTimeoutTransportException: [][inet[localhost/127.0.0.1:9200]][cluster:monitor/state] request_id [0] timed out after [5002ms]
+	at org.elasticsearch.transport.TransportService$TimeoutHandler.run(TransportService.java:529)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+30 dic 2015 11:47:58,506 elasticsearch[the Living Colossus It][generic][T#2] - [the Living Colossus It] disconnecting from [[#transport#-1][marco-Aspire-3810T][inet[localhost/127.0.0.1:9200]]] due to explicit disconnect call
+30 dic 2015 11:47:58,514 elasticsearch[the Living Colossus It][management][T#1] - [the Living Colossus It] connected to node [[#transport#-1][marco-Aspire-3810T][inet[localhost/127.0.0.1:9200]]]
