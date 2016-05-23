@@ -16,7 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class ExtractTo_NYPOST_LAPOST_NYTIMES {
+public class Extract_NYPOST_LAPOST_NYTIMES {
     public static void Analyzer(String link) throws IOException, JSONException, ParseException, InterruptedException {
         Document document;
         String title = "";
