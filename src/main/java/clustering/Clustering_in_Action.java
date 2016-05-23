@@ -98,7 +98,7 @@ public class Clustering_in_Action {
         JSONArray jsonArticle = ElasticFacade.queryNewsLucene();
         HashMap<String, LinkedList<JSONObject>> clustering = new HashMap<>();
         int num = 0;
-        for (int i = 0; i < jsonArticle.size() - 1; i++) {//jsonArticle.size() -
+        for (int i = 0; i < jsonArticle.size() - 1; i++) {-
             if (i < 500) {
                 HashMap<String, Double> map1 = new HashMap<>();
                 JSONObject single = (JSONObject) jsonArticle.get(i);
@@ -128,7 +128,6 @@ public class Clustering_in_Action {
                             LinkedList<JSONObject> k = (LinkedList<JSONObject>) pair.getValue();
                             for (JSONObject jso : k) {
                                 HashMap<String, Double> map3 = new HashMap<>();
-                                // JSONObject singleItem3 = (JSONObject) jso.get("_source");
                                 String relevances3 = (String) jso.get("relevances_Alchemy");
                                 String keywords3 = (String) jso.get("keywords_Alchemy");
                                 String metaKeyworfds = (String) jso.get("keywords_Metadata");
@@ -146,7 +145,7 @@ public class Clustering_in_Action {
                                 else
                                     cos = Cosine_Similarity.cosine_similarity(map3, map1);
                                 if (cos >= sogliaCos) {
-                                    if (cos >= maxSoglia && cos != 1) {//&&cos!=1){//&& cos!=1) {//**********************ci stava && cos!=1
+                                    if (cos >= maxSoglia && cos != 1) {
                                         maxSoglia = cos;
                                         t = true;
                                         numCluster = (String) pair.getKey();
@@ -174,21 +173,13 @@ public class Clustering_in_Action {
     }
 
     public static void indexLucene(HashMap<String, LinkedList<JSONObject>> cluster) throws IOException {
-        //LinkedList<String> lista = new LinkedList<>();
         for (Object o : cluster.entrySet()) {
-
             Map.Entry pair = (Map.Entry) o;
-            //System.out.print(pair.getKey());
             LinkedList<JSONObject> op = (LinkedList<JSONObject>) pair.getValue();
             for (JSONObject jk : op) {
-                //System.out.print(op.size() + "     ");
                 elasticsearch.ElasticFacade.indexNewsClusterMyCosSim(jk, (String) pair.getKey());
 
             }
         }
-        /*
-        for (String s : lista)
-            System.out.print(" lista topic : az" + s);
-        */
     }
 }
