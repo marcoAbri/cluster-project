@@ -10,7 +10,7 @@ import java.util.*;
 public class Cosine_Similarity {
 
     public static double cosine_similarityWithDate(HashMap<String, Double> v1, HashMap<String, Double> v2, String data1, String data2) throws ParseException {
-        boolean someDate = false;
+        boolean sameDate = false;
         boolean precDate = false;
         Date date1, date2;
         date1 = IndexLuceneToEleastic.getDateFormat1(data1);
@@ -24,7 +24,7 @@ public class Cosine_Similarity {
 
             int equal = calendar.compareTo(calendar2);
             if (equal == 0)
-                someDate = true;
+                sameDate = true;
             if (equal > 0) {
                 if (calendar.get(Calendar.YEAR) - calendar2.get(Calendar.YEAR) == 0 && calendar.get(Calendar.MONTH) - calendar2.get(Calendar.MONTH) == 0 && calendar.get(Calendar.DAY_OF_MONTH) - calendar2.get(Calendar.DAY_OF_MONTH) < 4)
                     precDate = true;
@@ -45,7 +45,7 @@ public class Cosine_Similarity {
             norm1 += v1.get(k) * v1.get(k);
         for (String k : v2.keySet())
             norm2 += v2.get(k) * v2.get(k);
-        if (someDate) {
+        if (sameDate) {
             if (1 - sclar / Math.sqrt(norm1 * norm2) > 0.003)
                 return (sclar / Math.sqrt(norm1 * norm2)) + 0.003;
         }
