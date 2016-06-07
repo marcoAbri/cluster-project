@@ -39,7 +39,7 @@ public class EvalExternalClustering {
                     Map.Entry pair2 = (Map.Entry) o2;
                     LinkedList<JSONObject> op2 = (LinkedList<JSONObject>) pair2.getValue();
                     for (JSONObject jsp : op2) {
-                        if(op2.contains(jsc)) {//magari metti il testo non il titolo
+                        if(op2.contains(jsc)) {
                             if(!(jsp.get("title").equals(jsc.get("title")))){
                                 if(op.contains(jsp)){
                                     a++;
@@ -63,7 +63,7 @@ public class EvalExternalClustering {
                     Map.Entry pair2 = (Map.Entry) o2;
                     LinkedList<JSONObject> op2 = (LinkedList<JSONObject>) pair2.getValue();
                     for (JSONObject jsp : op2) {
-                        if(op2.contains(jsc)) {//magari metti il testo non il titolo
+                        if(op2.contains(jsc)) {
                             if(!(jsp.get("title").equals(jsc.get("title")))){
                                 if(!op.contains(jsp)){
                                     b++;
@@ -88,7 +88,7 @@ public class EvalExternalClustering {
                     Map.Entry pair2 = (Map.Entry) o2;
                     LinkedList<JSONObject> op2 = (LinkedList<JSONObject>) pair2.getValue();
                     for (JSONObject jsp : op2) {
-                        if(!op2.contains(jsc)) {//magari metti il testo non il titolo
+                        if(!op2.contains(jsc)) {
                                 if(op.contains(jsp)){
                                     c++;
                             }
@@ -111,7 +111,7 @@ public class EvalExternalClustering {
                     Map.Entry pair2 = (Map.Entry) o2;
                     LinkedList<JSONObject> op2 = (LinkedList<JSONObject>) pair2.getValue();
                     for (JSONObject jsp : op2) {
-                        if(!op2.contains(jsc)) {//magari metti il testo non il titolo
+                        if(!op2.contains(jsc)) {
                             if(!op.contains(jsp)){
                                 d++;
                             }
